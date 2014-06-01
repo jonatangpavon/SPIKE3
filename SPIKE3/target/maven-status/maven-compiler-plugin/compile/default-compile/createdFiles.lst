@@ -1,0 +1,5 @@
+controlador\Application.class
+controlador\SiniestroController.class
+controlador\SiniestroService.class
+controlador\SiniestroRepository.class
+controlador\Siniestro.class
