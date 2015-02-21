@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" 
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+        <title><p th:text="#{index.welcome}"></p></title>
+</head>
+<!--  http://www.thymeleaf.org/doc/html/Using-Thymeleaf.html -->
+<body>
+	<h2><p th:text="#{index.welcome}"></p></h2>
+	 <div th:if="${param.error}">
+            Nombre de usuario incorrecto
+     </div>
+     <div th:if="${param.logout}">
+            Has salido de la aplicación
+     </div>
+     
+     <form action="siniestro/save" method="post">
+            <div><label> Matrícula : <input type="text" name="matricula"/> </label></div>
+            <div><label> Número de Póliza: <input type="text" name="numeroPoliza"/> </label></div>
+            <div><label> Número de Bastidor : <input type="text" name="numeroBastidor"/> </label></div>
+            <div><label> Marca : <input type="text" name="marca"/> </label></div>
+            <div><label> Modelo : <input type="text" name="modelo"/> </label></div>
+            <div><label> Fecha del accidente : <input type="text" name="fechaAccidente"/> </label></div>
+            <div><label> Lugar del accidente : <input type="text" name="lugarAccidente"/> </label></div>
+            <div><label> Tipo : <input type="text" name="tipo"/> </label></div>                          
+            <div><input type="submit" value="Submit"/></div>
+     </form>     
+         
+	
+<table>
+  <tr>
+    <th>Matrícula</th>
+    <th>Número de Poliza</th>
+    <th>Número de Bastidor</th>
+    <th>Marca</th>
+    <th>Modelo</th>
+    <th>Fecha del accidente</th>
+    <th>Lugar del accidente</th>
+    <th>Tipo</th>    
+  </tr>
+   <tr th:each="siniestro : ${siniestroList}">
+        <td th:text="${siniestro.matricula}"></td>
+        <td th:text="${siniestro.numeroPoliza}"></td>
+        <td th:text="${siniestro.numeroBastidor}"></td>
+        <td th:text="${siniestro.marca}"></td>
+        <td th:text="${siniestro.modelo}"></td>
+        <td th:text="${siniestro.fechaAccidente}"></td>
+        <td th:text="${siniestro.lugarAccidente}"></td>
+        <td th:text="${siniestro.tipo}"></td>
+   </tr> 
+  </table>
+	
+	
+</body>
+</html>
+

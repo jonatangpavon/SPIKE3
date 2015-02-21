@@ -1,5 +1,8 @@
 controlador\Application.class
-controlador\SiniestroController.class
+controlador\MvcConfig.class
 controlador\SiniestroService.class
+controlador\SpringMessageResolver.class
+controlador\SiniestroController.class
+controlador\WebSecurityConfig.class
 controlador\SiniestroRepository.class
 controlador\Siniestro.class
